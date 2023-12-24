@@ -6,6 +6,7 @@
 export PATH=$HOME/.local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
+ZSH_DISABLE_COMPFIX=true
 export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
@@ -74,7 +75,9 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions history-substring-search zsh-syntax-highlighting)
+plugins=(git zsh-autosuggestions 
+    history-substring-search 
+    zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 

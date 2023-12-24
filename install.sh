@@ -1,15 +1,16 @@
 # install nix
-curl -L https://nixos.org/nix/install | sh
+sh <(curl -L https://nixos.org/nix/install) --daemon
 
 # source nix
 . ~/.nix-profile/etc/profile.d/nix.sh
 
 # install packages
 nix-env -iA \
-	nixpkgs.zsh \
+	nixpkgs.zsh \ 
 	nixpkgs.neovim \
 	nixpkgs.tmux \
-	nixpkgs.stow \
+	nixpkgs.stow 
+#	nixpkgs.fish \ 
 
 # stow dotfiles
 stow git
@@ -17,12 +18,13 @@ stow nvim
 stow tmux
 stow zsh
 
-# add zsh as a login shell
-command -v zsh | sudo tee -a /etc/shells
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # use zsh as default shell
 sudo chsh -s $(which zsh) $USER
+#sudo chsh -s $(which fish) $USER
 
+       
 # Install oh-my-zsh
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 
@@ -31,11 +33,9 @@ git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh
 git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
-# Fix background theme issues (Not necessary depends on your theme)
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=white'
-
-# Restart zsh
-source ~/.zshrc
+# vim plug
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 # install neovim plugins
 nvim --headless +PlugInstall +qall
