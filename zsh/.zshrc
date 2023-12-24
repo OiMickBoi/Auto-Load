@@ -3,7 +3,7 @@
 #path=('$HOME.local/bin' $path)
 #export path
 
-export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/.bin:$PATH
 
 # Path to your oh-my-zsh installation.
 ZSH_DISABLE_COMPFIX=true
@@ -115,8 +115,11 @@ if [ -e /home/josh/.nix-profile/etc/profile.d/nix.sh ]; then . /home/josh/.nix-p
 # 
 alias t="tmux"
 alias v="nvim"
+alias vi="nvim ."
 alias yt="yt-dlp --add-metadata -i"
 alias yta="yt -x -f bestaudio/best"
+alias gs="git status"
+alias gp="git push"
 
 # docker
 alias docker="sudo docker"
@@ -126,4 +129,5 @@ alias docker-nix="docker run -ti docker.io/nixos/nix:master"
 # nix
 alias ns="nix-shell"
 alias n="nix"
+
 
