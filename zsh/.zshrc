@@ -77,7 +77,8 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git zsh-autosuggestions 
     history-substring-search 
-    zsh-syntax-highlighting)
+    zsh-syntax-highlighting
+    nix-shell)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -120,6 +121,7 @@ alias yt="yt-dlp --add-metadata -i"
 alias yta="yt -x -f bestaudio/best"
 alias gs="git status"
 alias gp="git push"
+alias cl="clear"
 
 # docker
 alias docker="sudo docker"
