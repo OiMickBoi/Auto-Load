@@ -35,7 +35,9 @@ let g:tokyonight_enable_italic = 1
 "let NERDTreeQuitOnOpen=1
 
 "set timeoutlen 500 " Set timeout length to 500 ms
+map <C-s>     :w<CR>
 map <leader>s :w<CR>
+map <leader>k :q<CR>
 map <leader>x :x<CR>
 map <leader>b :buffers<CR>
 map <leader>n :bnext<CR>
