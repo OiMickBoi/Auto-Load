@@ -33,12 +33,19 @@ let g:tokyonight_enable_italic = 1
 
 " Automatically close NERDTree when you open a file
 "let NERDTreeQuitOnOpen=1
-
 "set timeoutlen 500 " Set timeout length to 500 ms
+"
+" save and kill
 map <C-s>     :w<CR>
 map <leader>s :w<CR>
 map <leader>k :q<CR>
 map <leader>x :x<CR>
+
+" buffers
 map <leader>b :buffers<CR>
 map <leader>n :bnext<CR>
 map <leader>p :bprev<CR>
+
+" windows
+map <leader>h :sp<CR>
+map <leader>v :vs<CR>
