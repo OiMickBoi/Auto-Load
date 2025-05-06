@@ -1,0 +1,11 @@
+:set number relativenumber
+:set ruler
+:set ai
+:set et
+:set shiftwidth=4
+:set ts=4
+:set nowrap
+:set bg=dark
+:colorscheme elflord
+
+set path+=**
