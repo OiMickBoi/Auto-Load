@@ -1,5 +1,5 @@
 # install nix
-sh <(curl -L https://nixos.org/nix/install) --daemon
+#sh <(curl -L https://nixos.org/nix/install) --daemon
 
 # source nix
 . ~/.nix-profile/etc/profile.d/nix.sh
@@ -10,10 +10,15 @@ nix-env -iA \
 	nixpkgs.tmux \
 	nixpkgs.stow \
 	nixpkgs.zsh \
+	nixpkgs.emacs \
+	nixpkgs.helix \
+
 
 # stow dotfiles
 stow nvim
 stow tmux
+stow emacs
+stow helix
 
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
